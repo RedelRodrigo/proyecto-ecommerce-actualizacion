@@ -1,0 +1,1856 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  file.svg
+  globe.svg
+  next.svg
+  vercel.svg
+  window.svg
+src/
+  app/
+    admin/
+      page.tsx
+    api/
+      products/
+        route.ts
+    login/
+      page.tsx
+    products/
+      page.tsx
+    favicon.ico
+    globals.css
+    layout.tsx
+    page.tsx
+  components/
+    cart/
+      CartModal.tsx
+    layout/
+      Footer.tsx
+      Navbar.tsx
+    search/
+      Search.tsx
+  context/
+    AuthContext.tsx
+    CartContext.tsx
+  types/
+    index.ts
+.gitignore
+AGENTS.md
+biome.json
+eslint.config.mjs
+next.config.ts
+package.json
+postcss.config.mjs
+README.md
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+</file>
+
+<file path="public/file.svg">
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+</file>
+
+<file path="public/globe.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+</file>
+
+<file path="public/next.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+</file>
+
+<file path="public/vercel.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+</file>
+
+<file path="public/window.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+</file>
+
+<file path="src/app/admin/page.tsx">
+"use client";
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+import {
+  Alert,
+  Badge,
+  Button,
+  Card,
+  Container,
+  Form,
+  ListGroup,
+  Modal,
+  Spinner,
+} from "react-bootstrap";
+import { useAuth } from "@/context/AuthContext";
+import type { Product } from "@/types";
+
+export default function AdminPage() {
+  const { user } = useAuth();
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  // Modales de control
+  const [activeTab, setActiveTab] = useState<
+    "list" | "add" | "edit" | "delete"
+  >("list");
+
+  // Estado formulario (Agregar / Editar)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+    price: "",
+    category: "",
+    image: "",
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
+
+  const fetchProducts = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        "https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos",
+      );
+      setProducts(response.data);
+    } catch (_err) {
+      setError("Error al cargar los productos.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleFormChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Crear producto
+  const handleCreateSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+    try {
+      const newProduct = {
+        ...formData,
+        price: parseFloat(formData.price),
+        image: formData.image || "https://via.placeholder.com/150",
+        createdAt: new Date().toISOString(),
+      };
+      await axios.post(
+        "https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos",
+        newProduct,
+      );
+      setSuccess("Producto agregado exitosamente");
+      setFormData({
+        name: "",
+        description: "",
+        price: "",
+        category: "",
+        image: "",
+      });
+      fetchProducts();
+      setActiveTab("list");
+    } catch (_err) {
+      setError("Error al crear el producto.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  // Actualizar producto
+  const handleUpdateSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedProduct) return;
+    setSubmitting(true);
+    try {
+      const updated = {
+        ...formData,
+        price: parseFloat(formData.price),
+      };
+      await axios.put(
+        `https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos/${selectedProduct.id}`,
+        updated,
+      );
+      setSuccess("Producto actualizado exitosamente");
+      fetchProducts();
+      setActiveTab("list");
+      setSelectedProduct(null);
+    } catch (_err) {
+      setError("Error al actualizar.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  // Eliminar producto
+  const handleDeleteConfirm = async () => {
+    if (!selectedProduct) return;
+    setSubmitting(true);
+    try {
+      await axios.delete(
+        `https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos/${selectedProduct.id}`,
+      );
+      setSuccess("Producto eliminado exitosamente");
+      fetchProducts();
+      setShowDeleteModal(false);
+      setSelectedProduct(null);
+    } catch (_err) {
+      setError("Error al eliminar.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <Container className="text-center py-5">
+        <Spinner animation="border" />
+        <p className="mt-2">Cargando panel de administración...</p>
+      </Container>
+    );
+  }
+
+  return (
+    <Container className="py-4" style={{ maxWidth: "900px" }}>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1>Panel de Administración</h1>
+          <p className="text-muted mb-0">
+            Bienvenido, <strong>{user?.username}</strong>
+          </p>
+        </div>
+        {activeTab !== "list" && (
+          <Button
+            variant="outline-secondary"
+            onClick={() => setActiveTab("list")}
+          >
+            ← Volver al Panel
+          </Button>
+        )}
+      </div>
+
+      {error && (
+        <Alert variant="danger" onClose={() => setError("")} dismissible>
+          {error}
+        </Alert>
+      )}
+      {success && (
+        <Alert variant="success" onClose={() => setSuccess("")} dismissible>
+          {success}
+        </Alert>
+      )}
+
+      {/* VISTA PRINCIPAL DEL PANEL */}
+      {activeTab === "list" && (
+        <Card className="shadow-sm">
+          <Card.Body>
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h3 className="mb-0">Gestión de Productos</h3>
+              <Button
+                variant="primary"
+                onClick={() => {
+                  setFormData({
+                    name: "",
+                    description: "",
+                    price: "",
+                    category: "",
+                    image: "",
+                  });
+                  setActiveTab("add");
+                }}
+              >
+                + Agregar Producto
+              </Button>
+            </div>
+
+            <p className="text-muted">
+              Total de productos registrados:{" "}
+              <Badge bg="primary">{products.length}</Badge>
+            </p>
+
+            <ListGroup variant="flush">
+              {products.map((product) => (
+                <ListGroup.Item
+                  key={product.id}
+                  className="d-flex justify-content-between align-items-center py-3"
+                >
+                  <div className="d-flex align-items-center gap-3">
+                    <img
+                      src={product.image || "https://via.placeholder.com/50"}
+                      alt={product.name}
+                      width="50"
+                      height="50"
+                      className="object-fit-cover rounded"
+                    />
+                    <div>
+                      <h6 className="mb-1">{product.name}</h6>
+                      <small className="text-muted">
+                        ${product.price} | {product.category || "General"}
+                      </small>
+                    </div>
+                  </div>
+                  <div className="d-flex gap-2">
+                    <Button
+                      variant="outline-warning"
+                      size="sm"
+                      onClick={() => {
+                        setSelectedProduct(product);
+                        setFormData({
+                          name: product.name,
+                          description: product.description,
+                          price: product.price.toString(),
+                          category: product.category,
+                          image: product.image,
+                        });
+                        setActiveTab("edit");
+                      }}
+                    >
+                      Editar
+                    </Button>
+                    <Button
+                      variant="outline-danger"
+                      size="sm"
+                      onClick={() => {
+                        setSelectedProduct(product);
+                        setShowDeleteModal(true);
+                      }}
+                    >
+                      Eliminar
+                    </Button>
+                  </div>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </Card.Body>
+        </Card>
+      )}
+
+      {/* VISTA AGREGAR */}
+      {activeTab === "add" && (
+        <Card className="shadow-sm">
+          <Card.Body>
+            <h3 className="mb-4">Agregar Nuevo Producto</h3>
+            <Form onSubmit={handleCreateSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Descripción</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  name="description"
+                  value={formData.description}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Precio</Form.Label>
+                <Form.Control
+                  type="number"
+                  step="0.01"
+                  name="price"
+                  value={formData.price}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Categoría</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>URL de Imagen</Form.Label>
+                <Form.Control
+                  type="url"
+                  name="image"
+                  value={formData.image}
+                  onChange={handleFormChange}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit" disabled={submitting}>
+                {submitting ? "Guardando..." : "Crear Producto"}
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      )}
+
+      {/* VISTA EDITAR */}
+      {activeTab === "edit" && (
+        <Card className="shadow-sm">
+          <Card.Body>
+            <h3 className="mb-4">Editar Producto</h3>
+            <Form onSubmit={handleUpdateSubmit}>
+              <Form.Group className="mb-3">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Descripción</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  name="description"
+                  value={formData.description}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Precio</Form.Label>
+                <Form.Control
+                  type="number"
+                  step="0.01"
+                  name="price"
+                  value={formData.price}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Categoría</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleFormChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>URL de Imagen</Form.Label>
+                <Form.Control
+                  type="url"
+                  name="image"
+                  value={formData.image}
+                  onChange={handleFormChange}
+                />
+              </Form.Group>
+              <Button variant="success" type="submit" disabled={submitting}>
+                {submitting ? "Actualizando..." : "Guardar Cambios"}
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      )}
+
+      {/* MODAL ELIMINAR */}
+      <Modal
+        show={showDeleteModal}
+        onHide={() => setShowDeleteModal(false)}
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Confirmar Eliminación</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>
+            ¿Estás seguro de que deseas eliminar el producto{" "}
+            <strong>{selectedProduct?.name}</strong>?
+          </p>
+          <p className="text-muted small">Esta acción no se puede deshacer.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
+            Cancelar
+          </Button>
+          <Button
+            variant="danger"
+            onClick={handleDeleteConfirm}
+            disabled={submitting}
+          >
+            {submitting ? "Eliminando..." : "Sí, eliminar"}
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </Container>
+  );
+}
+</file>
+
+<file path="src/app/api/products/route.ts">
+
+</file>
+
+<file path="src/app/login/page.tsx">
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Alert, Button, Card, Container, Form } from "react-bootstrap";
+import { useAuth } from "@/context/AuthContext";
+
+export default function LoginPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const { login, isAdmin } = useAuth();
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    const result = login(username, password);
+
+    if (result.success) {
+      if (isAdmin()) {
+        router.push("/admin");
+      } else {
+        router.push("/products");
+      }
+    } else {
+      setError(result.message);
+    }
+  };
+
+  return (
+    <Container className="py-5" style={{ maxWidth: "450px" }}>
+      <Card className="shadow-sm">
+        <Card.Body className="p-4">
+          <div className="text-center mb-4">
+            <h2>Inicia Sesión</h2>
+            <p className="text-muted">
+              Ingresa tus credenciales para continuar
+            </p>
+          </div>
+
+          {error && <Alert variant="danger">{error}</Alert>}
+
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3">
+              <Form.Label>Usuario</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa tu usuario"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Ingresa tu contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" className="w-100 py-2">
+              Iniciar Sesión
+            </Button>
+          </Form>
+
+          <div className="mt-4 p-3 bg-dark rounded text-muted small">
+            <strong>Credenciales de prueba:</strong>
+            <br />
+            👤 <em>Usuario normal:</em> cualquier usuario/contraseña
+            <br />
+            👨‍💼 <em>Admin:</em> admin / admin123
+          </div>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
+}
+</file>
+
+<file path="src/app/products/page.tsx">
+"use client";
+
+import { useEffect, useState } from "react";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+import { useCart } from "@/context/CartContext";
+import type { Product } from "@/types";
+
+export default function ProductsPage() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [page, setPage] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const { addToCart } = useCart();
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(
+          `https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos?limit=8&page=${page}`,
+        );
+        if (!response.ok) throw new Error("Error al obtener los productos");
+        const data = await response.json();
+        setProducts(data);
+      } catch (err: any) {
+        setError(err.message || "Error desconocido");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [page]);
+
+  if (isLoading) {
+    return (
+      <div className="text-center py-5">
+        <Spinner animation="border" variant="indigo" />
+        <p className="mt-2 text-muted">Cargando experiencias...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mt-4">
+        <Alert variant="danger">ERROR: {error}</Alert>
+      </div>
+    );
+  }
+
+  return (
+    <div className="container py-5">
+      <div className="text-center mb-5">
+        <span
+          className="badge bg-indigo-subtle text-indigo px-3 py-2 rounded-pill mb-2 fw-semibold"
+          style={{ background: "rgba(99, 102, 241, 0.1)", color: "#818cf8" }}
+        >
+          Colección Exclusiva
+        </span>
+        <h1 className="fw-bold display-5">Catálogo Principal</h1>
+        <p className="text-muted">
+          Diseñado para destacar. Encuentra lo que buscas.
+        </p>
+      </div>
+
+      <div className="row g-4 justify-content-center">
+        {products.map((product) => (
+          <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div className="card h-100 modern-card rounded-4 overflow-hidden text-light border-0 shadow-sm">
+              <div
+                style={{ height: "200px", background: "#111827" }}
+                className="position-relative overflow-hidden d-flex align-items-center justify-content-center"
+              >
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-100 h-100 object-fit-cover transition-transform duration-300 hover:scale-105"
+                  />
+                ) : (
+                  <span className="text-muted">Sin imagen</span>
+                )}
+                <span className="position-absolute top-0 inset-e-0 m-3 badge bg-dark bg-opacity-75 backdrop-blur border border-light border-opacity-10">
+                  {product.category || "Tendencia"}
+                </span>
+              </div>
+              <div className="card-body d-flex flex-column p-4">
+                <h5 className="card-title fw-bold text-truncate mb-2">
+                  {product.name}
+                </h5>
+                <p
+                  className="card-text small text-muted grow mb-4"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {product.description}
+                </p>
+                <div className="d-flex align-items-center justify-content-between mt-auto pt-3 border-top border-secondary border-opacity-25">
+                  <div>
+                    <small
+                      className="text-muted d-block"
+                      style={{ fontSize: "0.75rem" }}
+                    >
+                      Precio
+                    </small>
+                    <span className="fs-4 fw-bold text-white">
+                      ${product.price}
+                    </span>
+                  </div>
+                  <Button
+                    className="btn-conversion rounded-pill px-4 py-2 shadow"
+                    onClick={() => addToCart(product)}
+                  >
+                    Comprar
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Paginación sofisticada */}
+      <div className="d-flex justify-content-center align-items-center gap-4 mt-5">
+        <Button
+          variant="outline-secondary"
+          className="rounded-pill px-4"
+          disabled={page === 1}
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+        >
+          ← Anterior
+        </Button>
+        <span className="fw-semibold text-muted">Página {page}</span>
+        <Button
+          variant="outline-secondary"
+          className="rounded-pill px-4"
+          onClick={() => setPage((prev) => prev + 1)}
+          disabled={products.length < 8}
+        >
+          Siguiente →
+        </Button>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-bg: #090d16;
+  --bs-body-color: #f8fafc;
+  --background: #090d16;
+  --foreground: #f8fafc;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Tarjetas con efecto moderno (Glassmorphism oscuro) */
+.modern-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
+}
+
+/* Botones con impacto visual de conversión */
+.btn-conversion {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-conversion:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+  color: white;
+}
+
+/* Ajustes globales para elementos de Bootstrap en modo oscuro */
+.card {
+  background-color: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+</file>
+
+<file path="src/app/page.tsx">
+"use client";
+
+import { ArrowRight, ShieldCheck, Sparkles, Truck, Zap } from "lucide-react";
+import Link from "next/link";
+import { Button, Container } from "react-bootstrap";
+import { Search } from "@/components/search/Search";
+
+export default function Home() {
+  return (
+    <div className="py-5">
+      {/* Hero Section */}
+      <Container className="text-center py-5">
+        <div className="mx-auto" style={{ maxWidth: "800px" }}>
+          <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-4 border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 small fw-semibold">
+            <Sparkles size={16} /> Nueva Colección Disponible
+          </div>
+          <h1 className="display-3 fw-bold mb-4 tracking-tight text-white">
+            Diseño, potencia y{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+              exclusividad.
+            </span>
+          </h1>
+          <p className="lead text-muted mb-5 fs-5">
+            Explora una nueva forma de comprar. Productos seleccionados bajo
+            altos estándares de calidad, pensados para destacar.
+          </p>
+
+          <div className="d-flex justify-content-center gap-3 mb-5">
+            <Button
+              className="btn-conversion btn-lg rounded-pill px-5 py-3 d-flex align-items-center gap-2"
+              as={Link}
+              href="/products"
+            >
+              Explorar Catálogo <ArrowRight size={18} />
+            </Button>
+          </div>
+
+          {/* Buscador Integrado con Estilo Sofisticado */}
+          <div className="modern-card p-4 rounded-4 shadow-lg border border-light border-opacity-10 text-start mt-4">
+            <h5 className="text-white mb-3 fw-semibold text-center">
+              ¿Buscas algo específico?
+            </h5>
+            <Search />
+          </div>
+        </div>
+      </Container>
+
+      {/* Badges de confianza */}
+      <Container className="py-5 border-top border-secondary border-opacity-10 mt-5">
+        <div className="row g-4 text-center">
+          <div className="col-md-4">
+            <div className="p-3 modern-card rounded-4 h-100">
+              <Zap className="text-indigo-400 mb-2" size={32} />
+              <h6 className="text-white fw-bold">Envíos Ultra Rápidos</h6>
+              <p className="small text-muted mb-0">
+                Despachos optimizados directo a tu puerta.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="p-3 modern-card rounded-4 h-100">
+              <ShieldCheck className="text-indigo-400 mb-2" size={32} />
+              <h6 className="text-white fw-bold">Compra 100% Segura</h6>
+              <p className="small text-muted mb-0">
+                Protección total en cada transacción y pago.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="p-3 modern-card rounded-4 h-100">
+              <Truck className="text-indigo-400 mb-2" size={32} />
+              <h6 className="text-white fw-bold">Soporte Dedicado</h6>
+              <p className="small text-muted mb-0">
+                Atención personalizada ante cualquier consulta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/cart/CartModal.tsx">
+"use client";
+
+import { ShoppingBag, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { Button, ListGroup, Modal } from "react-bootstrap";
+import { useCart } from "@/context/CartContext";
+
+export const CartModal = () => {
+  const {
+    cart,
+    showCart,
+    toggleCart,
+    removeFromCart,
+    clearCart,
+    getTotalPrice,
+  } = useCart();
+
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleClearCart = () => {
+    clearCart();
+    setShowConfirm(false);
+  };
+
+  return (
+    <>
+      <Modal
+        show={showCart}
+        onHide={toggleCart}
+        size="lg"
+        centered
+        contentClassName="bg-dark text-white border-0 shadow-lg rounded-4 overflow-hidden"
+      >
+        <Modal.Header
+          closeButton
+          closeVariant="white"
+          className="border-secondary border-opacity-25 pb-3"
+        >
+          <Modal.Title className="d-flex align-items-center gap-2 fw-bold">
+            <ShoppingBag size={22} className="text-indigo-400" /> Tu Carrito de
+            Compras
+          </Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body className="p-4">
+          {cart.length === 0 ? (
+            <div className="text-center py-5 text-muted">
+              <ShoppingBag size={48} className="mb-3 opacity-25" />
+              <p className="fs-5 mb-0">Tu carrito se encuentra vacío</p>
+              <small>Agrega productos para comenzar la experiencia.</small>
+            </div>
+          ) : (
+            <>
+              <ListGroup variant="flush" className="gap-2">
+                {cart.map((item) => (
+                  <ListGroup.Item
+                    key={item.id}
+                    className="d-flex justify-content-between align-items-center bg-black bg-opacity-40 text-white border border-secondary border-opacity-10 rounded-3 p-3"
+                  >
+                    <div className="d-flex align-items-center gap-3">
+                      <img
+                        src={item.image || "https://via.placeholder.com/50"}
+                        alt={item.name}
+                        width="50"
+                        height="50"
+                        className="object-fit-cover rounded-2"
+                      />
+                      <div>
+                        <h6 className="mb-1 fw-bold">{item.name}</h6>
+                        <small className="text-muted">
+                          Cantidad: {item.quantity}
+                        </small>
+                      </div>
+                    </div>
+                    <div className="d-flex align-items-center gap-4">
+                      <span className="fw-bold fs-5 text-indigo-300">
+                        ${(Number(item.price) * item.quantity).toFixed(2)}
+                      </span>
+                      <Button
+                        variant="link"
+                        className="text-danger p-0"
+                        onClick={() => removeFromCart(item.id)}
+                        title="Eliminar producto"
+                      >
+                        <Trash2 size={18} />
+                      </Button>
+                    </div>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+
+              <div className="mt-4 pt-3 border-top border-secondary border-opacity-25 d-flex justify-content-between align-items-center">
+                <span className="text-muted">Total estimado:</span>
+                <h3 className="fw-bold mb-0 text-white">
+                  ${getTotalPrice().toFixed(2)}
+                </h3>
+              </div>
+            </>
+          )}
+        </Modal.Body>
+
+        <Modal.Footer className="border-secondary border-opacity-25 pt-3">
+          {cart.length > 0 && (
+            <Button
+              variant="outline-danger"
+              className="rounded-pill px-4"
+              onClick={() => setShowConfirm(true)}
+            >
+              Vaciar Carrito
+            </Button>
+          )}
+          <Button
+            variant="secondary"
+            className="rounded-pill px-4"
+            onClick={toggleCart}
+          >
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      {/* Modal de confirmación */}
+      <Modal
+        show={showConfirm}
+        onHide={() => setShowConfirm(false)}
+        centered
+        contentClassName="bg-dark text-white border-0 rounded-4"
+      >
+        <Modal.Header
+          closeButton
+          closeVariant="white"
+          className="border-secondary border-opacity-25"
+        >
+          <Modal.Title className="fw-bold">Confirmar acción</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="py-4">
+          <p className="mb-0 text-muted">
+            ¿Estás seguro de que deseas vaciar por completo el carrito de
+            compras?
+          </p>
+        </Modal.Body>
+        <Modal.Footer className="border-secondary border-opacity-25">
+          <Button
+            variant="outline-secondary"
+            className="rounded-pill px-4"
+            onClick={() => setShowConfirm(false)}
+          >
+            Cancelar
+          </Button>
+          <Button
+            variant="danger"
+            className="rounded-pill px-4"
+            onClick={handleClearCart}
+          >
+            Sí, vaciar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
+</file>
+
+<file path="src/components/layout/Footer.tsx">
+import { Col, Container, Row } from "react-bootstrap";
+
+export const Footer = () => {
+  return (
+    <footer className="bg-dark text-white py-3 mt-auto border-top border-secondary">
+      <Container fluid>
+        <Row className="justify-content-around text-center">
+          <Col xs={12} md={4} className="d-none d-md-block">
+            <p className="mb-0 text-muted">© 2025 Mi eCommerce</p>
+          </Col>
+          <Col xs={12} md={4} className="d-none d-lg-block">
+            <p className="mb-0 text-muted">Todos los derechos reservados</p>
+          </Col>
+          <Col xs={12} md={4}>
+            <p className="mb-0 text-muted">Desarrollado por Redel Rodrigo</p>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+  );
+};
+</file>
+
+<file path="src/components/layout/Navbar.tsx">
+"use client";
+
+import { ShoppingCart } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Badge, Button, Container, Nav, Navbar } from "react-bootstrap";
+import { useAuth } from "@/context/AuthContext";
+import { useCart } from "@/context/CartContext";
+
+export const NavbarComponent = () => {
+  const [mounted, setMounted] = useState(false);
+  const { cart, toggleCart } = useCart();
+  const { isAuthenticated, isAdmin, logout, user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const totalDistinctProducts = cart.length;
+
+  const handleLogout = () => {
+    logout();
+    router.push("/");
+  };
+
+  if (!mounted) {
+    return (
+      <Navbar
+        bg="dark"
+        variant="dark"
+        expand="lg"
+        className="px-3 border-bottom border-secondary border-opacity-10"
+      />
+    );
+  }
+
+  return (
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="lg"
+      className="px-4 py-3 border-bottom border-secondary border-opacity-10 sticky-top backdrop-blur bg-opacity-75"
+      style={{ backgroundColor: "#090d16 !important" }}
+    >
+      <Container fluid>
+        <Navbar.Brand
+          href="/"
+          as={Link}
+          className="d-flex align-items-center gap-2 fw-bold text-white tracking-wider"
+        >
+          <img
+            src="/Logo.png"
+            alt="Logo"
+            width="36"
+            height="36"
+            className="rounded-circle"
+          />
+          <span>MI TIENDA</span>
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="border-0 shadow-none text-white"
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto ms-4 gap-2">
+            <Nav.Link
+              href="/"
+              as={Link}
+              className="text-light px-3 py-2 rounded transition-all hover:bg-white hover:bg-opacity-10"
+            >
+              Inicio
+            </Nav.Link>
+            <Nav.Link
+              href="/products"
+              as={Link}
+              className="text-light px-3 py-2 rounded transition-all hover:bg-white hover:bg-opacity-10"
+            >
+              Productos
+            </Nav.Link>
+            {isAdmin() && (
+              <Nav.Link
+                href="/admin"
+                as={Link}
+                className="text-indigo-400 fw-semibold px-3 py-2 rounded"
+              >
+                Admin
+              </Nav.Link>
+            )}
+          </Nav>
+
+          <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+            <Button
+              variant="outline-light"
+              onClick={toggleCart}
+              className="d-flex align-items-center gap-2 rounded-pill px-3 py-2 border-secondary"
+            >
+              <ShoppingCart size={18} />
+              <span>Carrito</span>
+              {totalDistinctProducts > 0 && (
+                <Badge
+                  bg="indigo"
+                  className="ms-1 rounded-pill bg-gradient-to-r from-indigo-500 to-purple-500"
+                >
+                  {totalDistinctProducts}
+                </Badge>
+              )}
+            </Button>
+
+            {isAuthenticated() ? (
+              <div className="d-flex align-items-center gap-3 ps-2 border-start border-secondary">
+                <span className="text-light small fw-medium">
+                  Hola, {user?.username}
+                </span>
+                <Button
+                  variant="outline-danger"
+                  size="sm"
+                  className="rounded-pill px-3"
+                  onClick={handleLogout}
+                >
+                  Salir
+                </Button>
+              </div>
+            ) : (
+              <Button
+                className="btn-conversion rounded-pill px-4 py-2"
+                size="sm"
+                href="/login"
+                as={Link}
+              >
+                Iniciar Sesión
+              </Button>
+            )}
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
+</file>
+
+<file path="src/components/search/Search.tsx">
+"use client";
+
+import axios from "axios";
+import { ShoppingCart } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
+import { useCart } from "@/context/CartContext";
+import type { Product } from "@/types";
+
+// Hook de debounce interno optimizado
+function useSearchValue(value: string, delay = 500) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+export const Search = () => {
+  const [query, setQuery] = useState("");
+  const searchQuery = useSearchValue(query, 500);
+  const [result, setResult] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const { addToCart } = useCart();
+
+  useEffect(() => {
+    if (!searchQuery || searchQuery.trim() === "") {
+      setResult([]);
+      return;
+    }
+
+    const fetchResults = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(
+          `https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos?search=${searchQuery}`,
+        );
+        setResult(response.data);
+      } catch (error) {
+        console.error("Error en búsqueda:", error);
+        setResult([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchResults();
+  }, [searchQuery]);
+
+  return (
+    <div className="position-relative">
+      <input
+        type="text"
+        placeholder="Buscar producto por nombre..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        className="form-control form-control-lg"
+      />
+
+      {isLoading && <p className="text-muted small mt-2">Buscando...</p>}
+
+      {result.length > 0 ? (
+        <ul
+          className="list-group position-absolute w-100 shadow-lg mt-2 z-3 text-start border border-secondary border-opacity-25 rounded-3 overflow-hidden"
+          style={{
+            maxHeight: "350px",
+            overflowY: "auto",
+            background: "#0b101b",
+          }}
+        >
+          {result.map((product) => (
+            <li
+              key={product.id}
+              className="list-group-item d-flex justify-content-between align-items-center p-3 border-bottom border-secondary border-opacity-10 bg-dark text-white"
+            >
+              <div className="d-flex align-items-center gap-3">
+                <img
+                  src={product.image || "https://via.placeholder.com/40"}
+                  alt={product.name}
+                  width="40"
+                  height="40"
+                  className="object-fit-cover rounded"
+                />
+                <div>
+                  <strong className="d-block text-white">{product.name}</strong>
+                  <span className="text-indigo-400 fw-bold small">
+                    ${product.price}
+                  </span>
+                </div>
+              </div>
+              <Button
+                size="sm"
+                className="btn-conversion rounded-pill px-3 py-1 d-flex align-items-center gap-1"
+                onClick={() => {
+                  addToCart(product);
+                  setQuery(""); // Limpia la búsqueda al agregar
+                  setResult([]);
+                }}
+              >
+                <ShoppingCart size={14} /> Agregar
+              </Button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        !isLoading &&
+        searchQuery && (
+          <p className="text-muted small mt-2">No se encontraron resultados</p>
+        )
+      )}
+    </div>
+  );
+};
+</file>
+
+<file path="src/context/AuthContext.tsx">
+"use client";
+
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import type { User } from "@/types";
+
+interface AuthContextType {
+  user: User | null;
+  isLoading: boolean;
+  login: (
+    username: string,
+    pass: string,
+  ) => { success: boolean; message: string };
+  logout: () => void;
+  isAuthenticated: () => boolean;
+  isAdmin: () => boolean;
+}
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (e) {
+        console.error("Error parsing user from localStorage", e);
+      }
+    }
+    setIsLoading(false);
+  }, []);
+
+  const login = (username: string, password: string) => {
+    if (!username || !password) {
+      return { success: false, message: "Por favor completa todos los campos" };
+    }
+
+    const isAdminUser = username === "admin" && password === "admin123";
+    const userData: User = {
+      username,
+      role: isAdminUser ? "admin" : "user",
+      loginTime: new Date().toISOString(),
+    };
+
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+    return { success: true, message: "Login exitoso" };
+  };
+
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
+
+  const isAuthenticated = () => user !== null;
+  const isAdmin = () => user?.role === "admin";
+
+  return (
+    <AuthContext.Provider
+      value={{ user, isLoading, login, logout, isAuthenticated, isAdmin }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) throw new Error("useAuth debe usarse dentro de AuthProvider");
+  return context;
+};
+</file>
+
+<file path="src/context/CartContext.tsx">
+"use client";
+
+import { createContext, type ReactNode, useContext, useState } from "react";
+import type { CartItem, Product } from "@/types";
+
+interface CartContextType {
+  cart: CartItem[];
+  showCart: boolean;
+  addToCart: (product: Product) => void;
+  removeFromCart: (productId: string) => void;
+  clearCart: () => void;
+  getTotalPrice: () => number;
+  toggleCart: () => void;
+}
+
+const CartContext = createContext<CartContextType | undefined>(undefined);
+
+export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [showCart, setShowCart] = useState<boolean>(false);
+
+  const addToCart = (product: Product) => {
+    setCart((prevCart) => {
+      const existing = prevCart.find((item) => item.id === product.id);
+      if (existing) {
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        );
+      }
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+
+  const removeFromCart = (productId: string) => {
+    setCart((prev) => prev.filter((item) => item.id !== productId));
+  };
+
+  const clearCart = () => setCart([]);
+
+  const getTotalPrice = () => {
+    return cart.reduce(
+      (total, item) => total + Number(item.price) * item.quantity,
+      0,
+    );
+  };
+
+  const toggleCart = () => setShowCart((prev) => !prev);
+
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        showCart,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        getTotalPrice,
+        toggleCart,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) throw new Error("useCart debe usarse dentro de CartProvider");
+  return context;
+};
+</file>
+
+<file path="src/types/index.ts">
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  image: string;
+  createdAt?: string;
+}
+
+export interface CartItem extends Product {
+  quantity: number;
+}
+
+export interface User {
+  username: string;
+  role: "admin" | "user";
+  loginTime: string;
+}
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="AGENTS.md">
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
+</file>
+
+<file path="biome.json">
+{
+	"$schema": "https://biomejs.dev/schemas/2.6.7/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 100
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"semicolons": "always"
+		}
+	}
+}
+</file>
+
+<file path="eslint.config.mjs">
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Configuración limpia y estable
+};
+
+export default nextConfig;
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="src/app/layout.tsx">
+import type { Metadata } from "next";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
+import { CartModal } from "@/components/cart/CartModal";
+import { Footer } from "@/components/layout/Footer";
+import { NavbarComponent } from "@/components/layout/Navbar";
+import { AuthProvider } from "@/context/AuthContext";
+import { CartProvider } from "@/context/CartContext";
+
+export const metadata: Metadata = {
+  title: "Mi Tienda - Next.js Edition",
+  description: "E-commerce refactorizado con Next.js, TypeScript y Bun",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="es" data-bs-theme="dark">
+      <body className="min-vh-100 d-flex flex-column">
+        <AuthProvider>
+          <CartProvider>
+            <NavbarComponent />
+            <main className="grow">{children}</main>
+            <Footer />
+            <CartModal />
+          </CartProvider>
+        </AuthProvider>
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="package.json">
+{
+  "name": "proyecto-final-next",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "bun --bun next dev --turbopack",
+    "build": "bun --bun next build",
+    "start": "bun --bun next start",
+    "lint": "bunx @biomejs/biome check --write src/",
+    "format": "bunx @biomejs/biome format --write src/",
+    "typecheck": "bunx tsc --noEmit"
+  },
+  "dependencies": {
+    "axios": "^1.21.1",
+    "bootstrap": "^5.3.9",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.72.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.7",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/bun": "latest",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2"
+  }
+}
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "postcss.config.mjs"
+  ],
+  "exclude": ["node_modules"]
+}
+</file>
+
+</files>
