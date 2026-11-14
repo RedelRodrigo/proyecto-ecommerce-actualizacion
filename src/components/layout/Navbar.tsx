@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Badge, Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
 
@@ -19,77 +19,56 @@ export const NavbarComponent = () => {
     setMounted(true);
   }, []);
 
-  const totalDistinctProducts = cart.length;
-
   const handleLogout = () => {
     logout();
     router.push("/");
   };
 
   if (!mounted) {
-    return (
-      <Navbar
-        bg="dark"
-        variant="dark"
-        expand="lg"
-        className="px-3 border-bottom border-secondary border-opacity-10"
-      />
-    );
+    return <Navbar expand="lg" className="site-nav sticky-top" />;
   }
 
   return (
-    <Navbar
-      bg="dark"
-      variant="dark"
-      expand="lg"
-      className="px-4 py-3 border-bottom border-secondary border-opacity-10 sticky-top backdrop-blur bg-opacity-75"
-      style={{ backgroundColor: "#090d16 !important" }}
-    >
+    <Navbar expand="lg" className="site-nav sticky-top">
       <Container fluid>
         <Navbar.Brand
-          href="/"
           as={Link}
-          className="d-flex align-items-center gap-2 fw-bold text-white tracking-wider"
+          href="/"
+          className="d-flex align-items-center gap-2 p-0"
         >
           <div
-            style={{ width: "36px", height: "36px", position: "relative" }}
+            style={{ width: "34px", height: "34px", position: "relative" }}
             className="rounded-circle overflow-hidden"
           >
             <Image
               src="/Logo.png"
               alt="Logo"
               fill
-              sizes="36px"
+              sizes="34px"
               className="object-fit-cover"
             />
           </div>
-          <span>MI TIENDA</span>
+          <span className="brand-mark">Mi Tienda</span>
         </Navbar.Brand>
+
         <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          className="border-0 shadow-none text-white"
+          aria-controls="main-nav"
+          className="border-0 shadow-none"
         />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto ms-4 gap-2">
-            <Nav.Link
-              href="/"
-              as={Link}
-              className="text-light px-3 py-2 rounded transition-all hover:bg-white hover:bg-opacity-10"
-            >
+
+        <Navbar.Collapse id="main-nav">
+          <Nav className="me-auto ms-lg-4 gap-1">
+            <Nav.Link as={Link} href="/" className="site-link">
               Inicio
             </Nav.Link>
-            <Nav.Link
-              href="/products"
-              as={Link}
-              className="text-light px-3 py-2 rounded transition-all hover:bg-white hover:bg-opacity-10"
-            >
+            <Nav.Link as={Link} href="/products" className="site-link">
               Productos
             </Nav.Link>
             {isAdmin() && (
               <Nav.Link
-                href="/admin"
                 as={Link}
-                className="text-indigo-400 fw-semibold px-3 py-2 rounded"
+                href="/admin"
+                className="site-link admin-link"
               >
                 Admin
               </Nav.Link>
@@ -98,29 +77,22 @@ export const NavbarComponent = () => {
 
           <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
             <Button
-              variant="outline-light"
+              variant="outline-secondary"
               onClick={toggleCart}
-              className="d-flex align-items-center gap-2 rounded-pill px-3 py-2 border-secondary"
+              className="d-flex align-items-center gap-2 rounded-pill px-3 py-2"
             >
               <ShoppingCart size={18} />
               <span>Carrito</span>
-              {totalDistinctProducts > 0 && (
-                <Badge
-                  bg="indigo"
-                  className="ms-1 rounded-pill bg-linear-to-r from-indigo-500 to-purple-500"
-                >
-                  {totalDistinctProducts}
-                </Badge>
+              {cart.length > 0 && (
+                <span className="cart-count">{cart.length}</span>
               )}
             </Button>
 
             {isAuthenticated() ? (
-              <div className="d-flex align-items-center gap-3 ps-2 border-start border-secondary">
-                <span className="text-light small fw-medium">
-                  Hola, {user?.username}
-                </span>
+              <div className="d-flex align-items-center gap-3 ps-3 border-start border-secondary">
+                <span className="small">Hola, {user?.username}</span>
                 <Button
-                  variant="outline-danger"
+                  variant="outline-secondary"
                   size="sm"
                   className="rounded-pill px-3"
                   onClick={handleLogout}
@@ -130,12 +102,13 @@ export const NavbarComponent = () => {
               </div>
             ) : (
               <Button
-                className="btn-conversion rounded-pill px-4 py-2"
+                variant="primary"
                 size="sm"
                 href="/login"
                 as={Link}
+                className="rounded-pill px-4 py-2"
               >
-                Iniciar Sesión
+                Iniciar sesión
               </Button>
             )}
           </div>

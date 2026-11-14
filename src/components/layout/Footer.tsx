@@ -1,20 +1,11 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 export const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-3 mt-auto border-top border-secondary">
-      <Container fluid>
-        <Row className="justify-content-around text-center">
-          <Col xs={12} md={4} className="d-none d-md-block">
-            <p className="mb-0 text-muted">© 2025 Mi eCommerce</p>
-          </Col>
-          <Col xs={12} md={4} className="d-none d-lg-block">
-            <p className="mb-0 text-muted">Todos los derechos reservados</p>
-          </Col>
-          <Col xs={12} md={4}>
-            <p className="mb-0 text-muted">Desarrollado por Redel Rodrigo</p>
-          </Col>
-        </Row>
+    <footer className="site-footer mt-auto">
+      <Container className="d-flex flex-column flex-md-row justify-content-between gap-2 py-4">
+        <span>© 2025 Mi eCommerce</span>
+        <span>Desarrollado por Redel Rodrigo</span>
       </Container>
     </footer>
   );

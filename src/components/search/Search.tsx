@@ -1,7 +1,6 @@
 "use client";
 
 import axios from "axios";
-import { ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useCart } from "@/context/CartContext";
@@ -50,69 +49,48 @@ export const Search = () => {
   }, [searchQuery]);
 
   return (
-    <div style={{ position: "relative", width: "100%" }}>
+    <div className="search-box">
       <input
         type="text"
         placeholder="Buscar producto por nombre..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         className="form-control form-control-lg"
-        style={{ position: "relative", zIndex: 2 }}
       />
 
-      {isLoading && <p className="text-muted small mt-2">Buscando...</p>}
+      {isLoading && <p className="text-muted small mt-2 mb-0">Buscando...</p>}
 
       {result.length > 0 ? (
-        <ul
-          className="list-group shadow-lg mt-2 text-start border border-secondary border-opacity-25 rounded-3 overflow-hidden"
-          style={{
-            position: "absolute",
-            top: "100%",
-            left: 0,
-            width: "100%",
-            maxHeight: "350px",
-            overflowY: "auto",
-            background: "#0b101b",
-            zIndex: 9999, // Forzamos que esté por encima de cualquier otro elemento de la pantalla
-          }}
-        >
+        <ul className="search-results">
           {result.map((product) => (
             <li
               key={product.id}
-              className="list-group-item d-flex justify-content-between align-items-center p-3 border-bottom border-secondary border-opacity-10 text-white"
-              style={{ backgroundColor: "#111827" }}
+              className="search-item d-flex justify-content-between align-items-center gap-3"
             >
-              <div className="d-flex align-items-center gap-3">
-                <div
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    position: "relative",
-                  }}
-                >
-                  <img
-                    src={product.image || "https://via.placeholder.com/40"}
-                    alt={product.name}
-                    className="w-100 h-100 object-fit-cover rounded"
-                  />
-                </div>
-                <div>
-                  <strong className="d-block text-white">{product.name}</strong>
-                  <span className="text-indigo-400 fw-bold small">
-                    ${product.price}
-                  </span>
+              <div className="d-flex align-items-center gap-3 overflow-hidden">
+                <img
+                  src={product.image || "https://via.placeholder.com/40"}
+                  alt={product.name}
+                  className="search-thumb"
+                />
+                <div className="overflow-hidden">
+                  <div className="fw-semibold text-truncate">
+                    {product.name}
+                  </div>
+                  <span className="price-sm">${product.price}</span>
                 </div>
               </div>
               <Button
                 size="sm"
-                className="btn-conversion rounded-pill px-3 py-1 d-flex align-items-center gap-1"
+                variant="primary"
+                className="rounded-pill px-3 flex-shrink-0"
                 onClick={() => {
                   addToCart(product);
                   setQuery("");
                   setResult([]);
                 }}
               >
-                <ShoppingCart size={14} /> Agregar
+                Agregar
               </Button>
             </li>
           ))}
@@ -120,7 +98,9 @@ export const Search = () => {
       ) : (
         !isLoading &&
         searchQuery && (
-          <p className="text-muted small mt-2">No se encontraron resultados</p>
+          <p className="text-muted small mt-2 mb-0">
+            No encontramos resultados.
+          </p>
         )
       )}
     </div>

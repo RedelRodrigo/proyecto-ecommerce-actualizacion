@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Figtree, Unbounded } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { CartModal } from "@/components/cart/CartModal";
@@ -7,9 +8,21 @@ import { NavbarComponent } from "@/components/layout/Navbar";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 
+const display = Unbounded({
+  subsets: ["latin"],
+  variable: "--font-unbounded",
+  display: "swap",
+});
+
+const body = Figtree({
+  subsets: ["latin"],
+  variable: "--font-figtree",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Mi Tienda - Next.js Edition",
-  description: "E-commerce refactorizado con Next.js, TypeScript y Bun",
+  title: "Mi Tienda",
+  description: "Productos seleccionados con criterio.",
 };
 
 export default function RootLayout({
@@ -18,12 +31,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" data-bs-theme="dark">
+    <html
+      lang="es"
+      data-bs-theme="dark"
+      className={`${display.variable} ${body.variable}`}
+    >
       <body className="min-vh-100 d-flex flex-column">
         <AuthProvider>
           <CartProvider>
             <NavbarComponent />
-            <main className="grow">{children}</main>
+            <main className="flex-grow-1">{children}</main>
             <Footer />
             <CartModal />
           </CartProvider>

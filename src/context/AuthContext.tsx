@@ -15,7 +15,7 @@ interface AuthContextType {
   login: (
     username: string,
     pass: string,
-  ) => { success: boolean; message: string };
+  ) => { success: boolean; message: string; role?: "admin" | "user" };
   logout: () => void;
   isAuthenticated: () => boolean;
   isAdmin: () => boolean;
@@ -39,6 +39,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setIsLoading(false);
   }, []);
 
+  // Dentro de login(), reemplaza el return final:
   const login = (username: string, password: string) => {
     if (!username || !password) {
       return { success: false, message: "Por favor completa todos los campos" };
@@ -53,7 +54,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));
-    return { success: true, message: "Login exitoso" };
+    return { success: true, message: "Login exitoso", role: userData.role };
   };
 
   const logout = () => {

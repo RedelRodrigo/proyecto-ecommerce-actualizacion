@@ -10,7 +10,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const { login, isAdmin } = useAuth();
+  const { login } = useAuth();
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,11 +20,7 @@ export default function LoginPage() {
     const result = login(username, password);
 
     if (result.success) {
-      if (isAdmin()) {
-        router.push("/admin");
-      } else {
-        router.push("/products");
-      }
+      router.push(result.role === "admin" ? "/admin" : "/products");
     } else {
       setError(result.message);
     }

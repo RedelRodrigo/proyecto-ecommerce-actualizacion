@@ -1,7 +1,8 @@
 "use client";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import {
   Alert,
   Badge,
@@ -16,19 +17,22 @@ import {
 import { useAuth } from "@/context/AuthContext";
 import type { Product } from "@/types";
 
+const PRODUCTS_URL = "https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos";
+
 export default function AdminPage() {
-  const { user } = useAuth();
+  const { user, isLoading: authLoading, isAdmin } = useAuth();
+  const router = useRouter();
+  const admin = isAdmin();
+
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // Modales de control
   const [activeTab, setActiveTab] = useState<
     "list" | "add" | "edit" | "delete"
   >("list");
 
-  // Estado formulario (Agregar / Editar)
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -40,23 +44,28 @@ export default function AdminPage() {
   const [submitting, setSubmitting] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
-
-  const fetchProducts = async () => {
+  // Definida antes del efecto, y estable entre renders
+  const fetchProducts = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get(
-        "https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos",
-      );
+      const response = await axios.get(PRODUCTS_URL);
       setProducts(response.data);
     } catch (_err) {
       setError("Error al cargar los productos.");
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  // Protege la ruta: espera a que cargue la sesión y solo carga datos si es admin
+  useEffect(() => {
+    if (authLoading) return;
+    if (!admin) {
+      router.replace("/login");
+      return;
+    }
+    fetchProducts();
+  }, [authLoading, admin, router, fetchProducts]);
 
   const handleFormChange = (
     e: React.ChangeEvent<
