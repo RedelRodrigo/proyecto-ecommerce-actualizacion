@@ -101,15 +101,12 @@ export const NavbarComponent = () => {
                 </Button>
               </div>
             ) : (
-              <Button
-                variant="primary"
-                size="sm"
+              <Link
                 href="/login"
-                as={Link}
-                className="rounded-pill px-4 py-2"
+                className="btn btn-primary btn-sm rounded-pill px-4 py-2 text-decoration-none d-inline-block"
               >
                 Iniciar sesión
-              </Button>
+              </Link>
             )}
           </div>
         </Navbar.Collapse>

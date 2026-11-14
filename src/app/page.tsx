@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Search } from "@/components/search/Search";
 
 export default function Home() {
@@ -14,15 +14,12 @@ export default function Home() {
             <p className="hero-lead">
               Productos seleccionados con criterio, listos para llevar.
             </p>
-            <Button
-              as={Link}
+            <Link
               href="/products"
-              variant="primary"
-              size="lg"
-              className="rounded-pill px-4"
+              className="btn btn-primary btn-lg rounded-pill px-4 text-decoration-none d-inline-block"
             >
               Ver catálogo
-            </Button>
+            </Link>
           </div>
           <div className="hero-orb" aria-hidden="true" />
         </Container>
