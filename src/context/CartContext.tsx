@@ -7,6 +7,7 @@ interface CartContextType {
   cart: CartItem[];
   showCart: boolean;
   addToCart: (product: Product) => void;
+  changeQuantity: (productId: string, delta: number) => void;
   removeFromCart: (productId: string) => void;
   clearCart: () => void;
   getTotalPrice: () => number;
@@ -33,6 +34,19 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  // delta: +1 o -1. Si la cantidad llega a 0, el producto se quita del carrito.
+  const changeQuantity = (productId: string, delta: number) => {
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.id === productId
+            ? { ...item, quantity: item.quantity + delta }
+            : item,
+        )
+        .filter((item) => item.quantity > 0),
+    );
+  };
+
   const removeFromCart = (productId: string) => {
     setCart((prev) => prev.filter((item) => item.id !== productId));
   };
@@ -54,6 +68,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         cart,
         showCart,
         addToCart,
+        changeQuantity,
         removeFromCart,
         clearCart,
         getTotalPrice,

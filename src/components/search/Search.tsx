@@ -1,12 +1,12 @@
 "use client";
 
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
-import { useCart } from "@/context/CartContext";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+import { fetchAllProducts } from "@/lib/products";
 import type { Product } from "@/types";
+import { AddToCartButton } from "@/components/cart/AddToCartButton";
 
-function useSearchValue(value: string, delay = 500) {
+function useDebouncedValue(value: string, delay = 500) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
@@ -19,34 +19,24 @@ function useSearchValue(value: string, delay = 500) {
 
 export const Search = () => {
   const [query, setQuery] = useState("");
-  const searchQuery = useSearchValue(query, 500);
-  const [result, setResult] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const { addToCart } = useCart();
+  const debouncedQuery = useDebouncedValue(query, 500);
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    if (!searchQuery || searchQuery.trim() === "") {
-      setResult([]);
-      return;
-    }
+    fetchAllProducts()
+      .then(setAllProducts)
+      .catch((error) => console.error("Error al cargar productos:", error));
+  }, []);
 
-    const fetchResults = async () => {
-      setIsLoading(true);
-      try {
-        const response = await axios.get(
-          `https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos?search=${searchQuery}`,
-        );
-        setResult(response.data);
-      } catch (error) {
-        console.error("Error en búsqueda:", error);
-        setResult([]);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const term = debouncedQuery.trim().toLowerCase();
 
-    fetchResults();
-  }, [searchQuery]);
+  const results = useMemo(
+    () =>
+      term
+        ? allProducts.filter((p) => p.name.toLowerCase().includes(term))
+        : [],
+    [term, allProducts],
+  );
 
   return (
     <div className="search-box">
@@ -58,19 +48,19 @@ export const Search = () => {
         className="form-control form-control-lg"
       />
 
-      {isLoading && <p className="text-muted small mt-2 mb-0">Buscando...</p>}
-
-      {result.length > 0 ? (
+      {results.length > 0 ? (
         <ul className="search-results">
-          {result.map((product) => (
+          {results.map((product) => (
             <li
               key={product.id}
               className="search-item d-flex justify-content-between align-items-center gap-3"
             >
               <div className="d-flex align-items-center gap-3 overflow-hidden">
-                <img
-                  src={product.image || "https://via.placeholder.com/40"}
+                <Image
+                  src={product.image || "/Logo.png"}
                   alt={product.name}
+                  width={40}
+                  height={40}
                   className="search-thumb"
                 />
                 <div className="overflow-hidden">
@@ -80,24 +70,12 @@ export const Search = () => {
                   <span className="price-sm">${product.price}</span>
                 </div>
               </div>
-              <Button
-                size="sm"
-                variant="primary"
-                className="rounded-pill px-3 flex-shrink-0"
-                onClick={() => {
-                  addToCart(product);
-                  setQuery("");
-                  setResult([]);
-                }}
-              >
-                Agregar
-              </Button>
+              <AddToCartButton product={product} className="shrink-0" />
             </li>
           ))}
         </ul>
       ) : (
-        !isLoading &&
-        searchQuery && (
+        term && (
           <p className="text-muted small mt-2 mb-0">
             No encontramos resultados.
           </p>

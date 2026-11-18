@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**", // Permite imágenes de cualquier dominio externo (ideal para MockAPI y placeholders)
+        hostname: "fakestoreapi.com",
       },
     ],
   },

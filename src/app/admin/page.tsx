@@ -17,6 +17,8 @@ import {
 import { useAuth } from "@/context/AuthContext";
 import type { Product } from "@/types";
 
+import Image from "next/image";
+
 const PRODUCTS_URL = "https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos";
 
 export default function AdminPage() {
@@ -85,7 +87,7 @@ export default function AdminPage() {
       const newProduct = {
         ...formData,
         price: parseFloat(formData.price),
-        image: formData.image || "https://via.placeholder.com/150",
+        image: formData.image || "/Logo.png",
         createdAt: new Date().toISOString(),
       };
       await axios.post(
@@ -227,11 +229,11 @@ export default function AdminPage() {
                   className="d-flex justify-content-between align-items-center py-3"
                 >
                   <div className="d-flex align-items-center gap-3">
-                    <img
-                      src={product.image || "https://via.placeholder.com/50"}
+                    <Image
+                      src={product.image || "/Logo.png"}
                       alt={product.name}
-                      width="50"
-                      height="50"
+                      width={50}
+                      height={50}
                       className="object-fit-cover rounded"
                     />
                     <div>

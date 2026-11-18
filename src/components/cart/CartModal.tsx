@@ -1,6 +1,7 @@
 "use client";
 
-import { Trash2 } from "lucide-react";
+import { Minus, Plus, Trash2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useCart } from "@/context/CartContext";
@@ -11,6 +12,7 @@ export const CartModal = () => {
     showCart,
     toggleCart,
     removeFromCart,
+    changeQuantity,
     clearCart,
     getTotalPrice,
   } = useCart();
@@ -45,16 +47,43 @@ export const CartModal = () => {
                   className="cart-row d-flex justify-content-between align-items-center gap-3"
                 >
                   <div className="d-flex align-items-center gap-3">
-                    <img
-                      src={item.image || "https://via.placeholder.com/52"}
+                    <Image
+                      src={item.image || "/Logo.png"}
                       alt={item.name}
+                      width={52}
+                      height={52}
                       className="cart-thumb"
                     />
                     <div>
                       <div className="fw-semibold">{item.name}</div>
-                      <small className="text-muted">
-                        Cantidad: {item.quantity}
-                      </small>
+                      <div className="d-flex align-items-center gap-2 mt-1">
+                        <Button
+                          variant="outline-secondary"
+                          size="sm"
+                          className="rounded-circle p-0 d-flex align-items-center justify-content-center"
+                          style={{ width: "28px", height: "28px" }}
+                          onClick={() => changeQuantity(item.id, -1)}
+                          aria-label={`Quitar una unidad de ${item.name}`}
+                        >
+                          <Minus size={14} aria-hidden="true" />
+                        </Button>
+                        <span
+                          className="fw-semibold text-center"
+                          style={{ minWidth: "1.5rem" }}
+                        >
+                          {item.quantity}
+                        </span>
+                        <Button
+                          variant="outline-secondary"
+                          size="sm"
+                          className="rounded-circle p-0 d-flex align-items-center justify-content-center"
+                          style={{ width: "28px", height: "28px" }}
+                          onClick={() => changeQuantity(item.id, 1)}
+                          aria-label={`Agregar una unidad de ${item.name}`}
+                        >
+                          <Plus size={14} aria-hidden="true" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                   <div className="d-flex align-items-center gap-3">
@@ -66,8 +95,9 @@ export const CartModal = () => {
                       className="p-0 text-danger"
                       onClick={() => removeFromCart(item.id)}
                       title="Eliminar producto"
+                      aria-label={`Eliminar ${item.name} del carrito`}
                     >
-                      <Trash2 size={18} />
+                      <Trash2 size={18} aria-hidden="true" />
                     </Button>
                   </div>
                 </div>

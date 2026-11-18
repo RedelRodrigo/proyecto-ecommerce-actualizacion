@@ -5,36 +5,30 @@ import { useEffect, useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
-import { useCart } from "@/context/CartContext";
+
+import { fetchAllProducts } from "@/lib/products";
 import type { Product } from "@/types";
+import { AddToCartButton } from "@/components/cart/AddToCartButton";
+
+const PAGE_SIZE = 8;
 
 export default function ProductsPage() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const { addToCart } = useCart();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const response = await fetch(
-          `https://68d6f35cc2a1754b426c4f7e.mockapi.io/Productos?limit=8&page=${page}`,
-        );
-        if (!response.ok) throw new Error("Error al obtener los productos");
-        const data = await response.json();
-        setProducts(data);
-      } catch (err: unknown) {
-        setError(err instanceof Error ? err.message : "Error desconocido");
-      } finally {
-        setIsLoading(false);
-      }
-    };
+    fetchAllProducts()
+      .then(setAllProducts)
+      .catch((err: unknown) =>
+        setError(err instanceof Error ? err.message : "Error desconocido"),
+      )
+      .finally(() => setIsLoading(false));
+  }, []);
 
-    fetchProducts();
-  }, [page]);
+  const totalPages = Math.max(1, Math.ceil(allProducts.length / PAGE_SIZE));
+  const products = allProducts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   if (isLoading) {
     return (
@@ -74,13 +68,13 @@ export default function ProductsPage() {
                     className="product-img"
                   />
                 ) : (
-                  <span className="text-muted small position-absolute top-50 start-50 translate-middle">
+                  <span className="text-muted small position-absolute top-50 inset-s-50 translate-middle">
                     Sin imagen
                   </span>
                 )}
               </div>
 
-              <div className="p-3 d-flex flex-column flex-grow-1">
+              <div className="p-3 d-flex flex-column grow">
                 {product.category && (
                   <span className="product-category">{product.category}</span>
                 )}
@@ -89,14 +83,7 @@ export default function ProductsPage() {
 
                 <div className="d-flex align-items-end justify-content-between gap-2 mt-auto pt-3">
                   <span className="price">${product.price}</span>
-                  <Button
-                    size="sm"
-                    variant="primary"
-                    className="rounded-pill px-3"
-                    onClick={() => addToCart(product)}
-                  >
-                    Agregar
-                  </Button>
+                  <AddToCartButton product={product} />
                 </div>
               </div>
             </article>
@@ -116,12 +103,14 @@ export default function ProductsPage() {
         >
           Anterior
         </Button>
-        <span className="text-muted">Página {page}</span>
+        <span className="text-muted">
+          Página {page} de {totalPages}
+        </span>
         <Button
           variant="outline-secondary"
           className="rounded-pill px-4"
-          onClick={() => setPage((prev) => prev + 1)}
-          disabled={products.length < 8}
+          onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+          disabled={page >= totalPages}
         >
           Siguiente
         </Button>

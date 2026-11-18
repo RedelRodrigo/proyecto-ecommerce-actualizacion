@@ -32,7 +32,6 @@ export default function Home() {
         </div>
       </Container>
 
-      {/* Reemplazar por datos reales de tu tienda */}
       <div className="trust-strip">
         <Container>
           <span>Envío a todo el país</span>
